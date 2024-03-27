@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+{% block body  %}
+
+
+<div class="container ">
+     <div class="row">
+          {% for i in final %}
+          <div class="col-md-4">
+          <div class="card  my-3 " style="width:21rem; ">
+  <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap" width="500px" height="500px">
+  <div class="card-body mx-3 ">
+    <h2 class="card-title">{{i.title}}</h2>
+    <p class="card-text">{{i.desc}}</p>
+    <a href="{% url  'firstapp:details' i.id %}" class="btn btn-primary">View Details</a><br><br>
+
+  </div>
+</div>
+          </div>
+         {% endfor %}
+     </div>
+</div>
+
+{% endblock %}
